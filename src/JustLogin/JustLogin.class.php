@@ -15,9 +15,11 @@ namespace JustLogin;
 class JustLogin extends JustCore
 {
     /**
-     * @var null 保存 header 数据
+     * @var null 保存 请求头 数据
      */
-    protected $httpHeader = NULL;
+    protected $httpRequest = NULL;
+
+    protected $httpResponse = NULL;
 
 
     /**
@@ -25,7 +27,7 @@ class JustLogin extends JustCore
      */
     public function __construct()
     {
-        $this->httpHeader = new JustHttpHeader();
+        $this->httpRequest = new JustHttpRequest();
     }
 
 
@@ -35,7 +37,7 @@ class JustLogin extends JustCore
      * @return $this
      */
     public function url($url){
-        $this->httpHeader->setUrl( $url);
+        $this->httpRequest->setUrl( $url);
         return $this;
     }
 
@@ -46,7 +48,7 @@ class JustLogin extends JustCore
      * @return $this
      */
     public function data($data){
-        $this->httpHeader->setData($data);
+        $this->httpRequest->setData($data);
         return $this;
     }
 

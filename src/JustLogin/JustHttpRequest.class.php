@@ -9,7 +9,7 @@
 namespace JustLogin;
 
 
-class JustHttpHeader extends JustCore
+class JustHttpRequest extends JustCore
 {
     /**
      * @var string
